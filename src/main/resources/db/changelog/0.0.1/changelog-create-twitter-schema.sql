@@ -1,6 +1,6 @@
 --liquibase formatted sql
 
---changeset SergeyLabuzof:create-twitter-
+--changeset SergeyLabuzov:create-twitter-schema
 --comment create new schema
 
 create schema twitter;
