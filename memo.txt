@@ -1,0 +1,26 @@
+2024-09-11
+Using generated security password: 64a66261-0a6c-47a9-a430-e70eb9ecfa74
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+Using generated security password: 64a66261-0a6c-47a9-a430-e70eb9ecfa74
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+Using generated security password: 0bccb33b-cf46-4668-b702-b8c6b2fdd8a8
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+
+http.csrf().disable();
+        http.headers().httpStrictTransportSecurity().disable();
+        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+
+        // Authorize sub-folders permissions
+        http.antMatcher(uri).authorizeRequests().anyRequest().permitAll();
+
+{
+    "username": "testuser",
+    "password": "password",
+    "authorities": {
+        "id": "1",
+        "authority": "USER_ROLE"
+    }
+}
