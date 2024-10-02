@@ -24,3 +24,10 @@ http.csrf().disable();
         "authority": "USER_ROLE"
     }
 }
+
+2024-10-03
+Basic Auth
+В данном видео рассмотрим авторизацию пользователей на примере Basic Auth. Имплементируем интерфейс UserDetailsService и рассмотрим 3 варианта обработки LazyInitializationException.
+Ссылка на Git репозиторий: https://github.com/SLabuzov/twitter/tree/basic_auth
+
+

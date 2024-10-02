@@ -26,7 +26,7 @@ public class UserAccountServiceImpl implements UserAccountService {
     }
 
     @Override
-    public Optional<UserDetails> findUserByUsername(String username) {
+    public Optional<UserAccount> findUserByUsername(String username) {
         return this.userAccountRepository.findByUsername(username);
     }
 }
