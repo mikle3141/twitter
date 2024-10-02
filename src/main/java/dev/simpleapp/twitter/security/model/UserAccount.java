@@ -23,7 +23,7 @@ public class UserAccount implements UserDetails {
     @Column(nullable = false)
     private String password;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
         schema = "identity",
         name = "user_accounts_roles",
@@ -38,17 +38,17 @@ public class UserAccount implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
