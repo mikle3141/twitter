@@ -23,7 +23,7 @@ public class UserAccount implements UserDetails {
     @Column(nullable = false)
     private String password;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany
     @JoinTable(
         schema = "identity",
         name = "user_accounts_roles",
