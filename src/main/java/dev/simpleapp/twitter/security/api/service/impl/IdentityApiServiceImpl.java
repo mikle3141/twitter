@@ -22,11 +22,12 @@ public class IdentityApiServiceImpl implements IdentityApiService {
     @Override
     public Optional<CurrentUserApiModel> currentUserAccount() {
         SecurityContext securityContext = SecurityContextHolder.getContext();
-        Authentication authentication = securityContext.getAuthentication();
-        if (authentication == null) {
-            return Optional.empty();
-        }
-        String username = authentication.getName();
+        return Optional.ofNullable(securityContext.getAuthentication())
+                .map(Authentication::getName)
+                .flatMap(this::extractCurrentUserApiModel);
+    }
+
+    private Optional<CurrentUserApiModel> extractCurrentUserApiModel(String username) {
         return this.userAccountService.findUserByUsername(username)
                 .map(userAccount -> new CurrentUserApiModel(userAccount.getId()));
     }
