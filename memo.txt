@@ -30,4 +30,15 @@ Basic Auth
 В данном видео рассмотрим авторизацию пользователей на примере Basic Auth. Имплементируем интерфейс UserDetailsService и рассмотрим 3 варианта обработки LazyInitializationException.
 Ссылка на Git репозиторий: https://github.com/SLabuzov/twitter/tree/basic_auth
 
+2024-11-27
+Генерация данных
+select * from twitter.user_profiles;
+
+insert into twitter.tweets (message, user_profile_id, create_timestamp, modified_timestamp)
+select 'Твит № ' || id
+    , 2
+    , now() - (10000 - id || ' hours')::interval
+    , now() - (10000 - id || ' hours')::interval
+from generate_series(1, 10000) id;
+
 
