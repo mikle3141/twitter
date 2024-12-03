@@ -15,6 +15,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 
+import static dev.simpleapp.twitter.user.tweet.model.Tweet_.CREATE_TIMESTAMP;
+
 @Component
 public class TweetFindUseCaseFacade implements TweetFindUseCase {
 
@@ -34,7 +36,7 @@ public class TweetFindUseCaseFacade implements TweetFindUseCase {
     public Collection<TweetResponse> findTweets(TweetFindRequest findRequest) {
         UserProfile owner = currentUserProfileApiService.currentUserProfile();
 
-        Sort sort = Sort.by(Sort.Direction.DESC, "createTimestamp");
+        Sort sort = Sort.by(Sort.Direction.DESC, CREATE_TIMESTAMP);
 
         Pageable pageable = PageRequest.of(findRequest.page(), findRequest.limit(), sort);
 
