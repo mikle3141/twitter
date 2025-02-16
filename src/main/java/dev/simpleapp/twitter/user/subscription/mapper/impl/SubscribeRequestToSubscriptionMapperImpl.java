@@ -1,8 +1,9 @@
-package dev.simpleapp.twitter.user.subscription.mapper;
+package dev.simpleapp.twitter.user.subscription.mapper.impl;
 
 import dev.simpleapp.twitter.user.profile.api.service.CurrentUserProfileApiService;
 import dev.simpleapp.twitter.user.profile.api.service.UserProfileApiService;
 import dev.simpleapp.twitter.user.profile.model.UserProfile;
+import dev.simpleapp.twitter.user.subscription.mapper.SubscribeRequestToSubscriptionMapper;
 import dev.simpleapp.twitter.user.subscription.model.Subscription;
 import dev.simpleapp.twitter.user.subscription.web.model.SubscribeRequest;
 import org.springframework.stereotype.Component;
